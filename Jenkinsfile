@@ -15,7 +15,6 @@ stages{
 		}
 		stage ('apache-copy'){
 				steps{
-				sh "chown -R 777 /mnt/myproject/index.html"
 				sh "cp /mnt/myproject/index.html /var/www/html"
 				sh "chmod -R 777 /var/www/hmtl/index.html"
             
