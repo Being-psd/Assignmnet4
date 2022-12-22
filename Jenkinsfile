@@ -2,33 +2,25 @@ pipeline {
 
 agent {
 			label{
-						label 'built-in'
+				label 'built-in'
+				customWorkspace "/mnt/myproject"
 			}
 }
 
 stages{
-			stage ('apache-run'){
-								steps{
-											sh "sudo yum install httpd -y "
-                      sh "systemctl start httpd"
-                      sh "cp -r index.html /var/www/html"
-                      sh chmod -R 777 /var/www/html"
-								}
+			stage ('deploy'){
+			steps{
+			sh "sudo yum install httpd -y "
+             
 			}
-			
-			stage ('changes in QA'){
-			agent {
-						label {
-									label "QA"
-						}
-			}
-								steps {
-                    sh "sudo yum install httpd -y "
-                      sh "systemctl start httpd"
-                      sh "cp -r index.html /var/www/html"
-                      sh chmod -R 777 /var/www/html"
-										
-								}
+		}
+		stage ('start'){
+				steps{
+					sh "chmod -R 777 /mnt/myproject/index.html"
+				sh "cp /mnt/myproject/index.html /var/www/html/"
+					sh "systemctl start httpd"
+            
+				}
 			}
 }
 }
