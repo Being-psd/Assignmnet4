@@ -17,7 +17,7 @@ stages{
 		stage ('start'){
 				steps{
 					
-				sh "cp /mnt/myproject/index.html /var/www/html/index.html"
+				sh "cp -r /mnt/myproject/index.html /var/www/html/index.html"
 					sh "chmod -R 777 /var/www/html/index.html"
 					sh "service httpd start"
             
