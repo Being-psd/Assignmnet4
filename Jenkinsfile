@@ -19,7 +19,7 @@ stages{
 					
 				sh "cp -r /mnt/myproject/index.html /var/www/html/index.html "
 					sh "chmod -R 777 /var/www/html/index.html"
-					sh "systemctl start httpd"
+					sh "service httpd start"
             
 				}
 			}
