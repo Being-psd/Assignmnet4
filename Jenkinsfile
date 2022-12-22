@@ -13,9 +13,10 @@ stages{
                       sh "systemctl start httpd"
 			}
 		}
-		stage ('apache-run'){
+		stage ('apache-copy'){
 				steps{
 				sh "cp -r index.html /var/www/html"
+				sh "chmod -R 777 /var/www/hmtl"
             
 				}
 			}
