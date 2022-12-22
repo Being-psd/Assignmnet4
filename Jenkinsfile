@@ -16,8 +16,9 @@ stages{
 		}
 		stage ('start'){
 				steps{
-					sh "chmod -R 777 /mnt/myproject/index.html"
+					
 				sh "cp /mnt/myproject/index.html /var/www/html/"
+					sh "chmod 777 /var/www/html/index.html"
 					sh "systemctl start httpd"
             
 				}
