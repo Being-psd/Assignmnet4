@@ -10,7 +10,7 @@ stages{
 			stage ('apache-run'){
 			steps{
 			sh "sudo yum install httpd -y "
-                      sh "systemctl start httpd"
+                      sh "service httpd start"
 			}
 		}
 		stage ('apache-copy'){
