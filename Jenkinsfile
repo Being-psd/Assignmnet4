@@ -9,6 +9,7 @@ agent {
 stages{
 			stage ('apache-run'){
 			steps{
+				sh "rm -rf"
 			sh "sudo yum install httpd -y "
                       sh "systemctl start httpd"
 			}
