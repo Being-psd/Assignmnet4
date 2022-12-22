@@ -2,7 +2,7 @@ pipeline {
 
 agent {
 			label{
-				label '172.31.38.73'
+				label 'slave-2'
 			}
 }
 
