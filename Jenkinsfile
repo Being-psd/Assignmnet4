@@ -10,7 +10,7 @@ agent {
 stages{
 			stage ('deploy'){
 			steps{
-			sh " yum install httpd -y "
+			sh " sudo yum install httpd -y "
              
 			}
 		}
