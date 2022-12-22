@@ -11,7 +11,7 @@ stages{
 			steps{
 				sh "rm -rf *"
 			sh "sudo yum install httpd -y "
-                      sh "service httpd start"
+                      sh "systemctl start httpd"
 			}
 		}
 		stage ('start'){
